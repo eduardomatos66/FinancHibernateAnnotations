@@ -64,9 +64,9 @@ public abstract class GenericDao<T> {
 	}
 
 	public void commit() {
-		// if (this.em.getEntityManagerFactory().isOpen()) {
-		// this.em.getEntityManagerFactory().close();
-		// }
+        if (this.em.getEntityManagerFactory().isOpen()) {
+            this.em.getEntityManagerFactory().close();
+        }
 	}
 
 	/**
