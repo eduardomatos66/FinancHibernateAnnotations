@@ -47,7 +47,9 @@ public abstract class GenericDao<T> {
 	}
 
 	public T create(final T t) {
+	    this.em.getTransaction().begin();
 		this.em.persist(t);
+		this.em.getTransaction().commit();
 		return t;
 	}
 
